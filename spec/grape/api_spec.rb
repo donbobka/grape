@@ -377,7 +377,7 @@ describe Grape::API do
 
     [:put, :post].each do |verb|
       context verb do
-        ['string', :symbol, 1, -1.1, {}, [], true, false, nil].each do |object|
+        ['string', 'ライン', :symbol, 1, -1.1, {}, [], true, false, nil].each do |object|
           it "allows a(n) #{object.class} json object in params" do
             subject.format :json
             subject.send(verb) do

@@ -54,7 +54,7 @@ module Grape
 
           if (input = env['rack.input'])
             input.rewind
-            body = env['api.request.input'] = input.read
+            body = env['api.request.input'] = input.read.force_encoding('utf-8')
             begin
               read_rack_input(body) if body && body.length > 0
             ensure
